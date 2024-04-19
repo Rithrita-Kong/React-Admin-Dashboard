@@ -14,7 +14,7 @@ const Ecommerce = () => {
   const { currentColorName } = useStateContext();
   console.log(currentColorName);
   return (
-    <div className="mx-10 my-5">
+    <>
       <div className="flex justify-around">
         <Cards
           color={currentColorName}
@@ -60,7 +60,7 @@ const Ecommerce = () => {
           />
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

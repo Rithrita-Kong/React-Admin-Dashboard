@@ -4,7 +4,25 @@ import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 
 import { Navbar, Sidebar, ThemeSettings } from "./components";
-import { Ecommerce, InProgress } from "./pages";
+import { LazyComponent } from "./pages";
+
+const Ecommerce = LazyComponent(() => import("./pages/Ecommerce"));
+const Employee = LazyComponent(() => import("./pages/Employee"));
+const Orders = LazyComponent(() => import("./pages/Orders"));
+const Customer = LazyComponent(() => import("./pages/Customer"));
+const Calendar = LazyComponent(() => import("./pages/Calendar"));
+const Kanban = LazyComponent(() => import("./pages/Kanban"));
+const Editor = LazyComponent(() => import("./pages/Editor"));
+const ColorPicker = LazyComponent(() => import("./pages/ColorPicker"));
+const Line = LazyComponent(() => import("./pages/Chart/Line"));
+const Area = LazyComponent(() => import("./pages/Chart/Area"));
+const Bar = LazyComponent(() => import("./pages/Chart/Bar"));
+const Pie = LazyComponent(() => import("./pages/Chart/Pie"));
+const Financial = LazyComponent(() => import("./pages/Chart/Financial"));
+const ColorMapping = LazyComponent(() => import("./pages/Chart/ColorMapping"));
+const Pyramid = LazyComponent(() => import("./pages/Chart/Pyramid"));
+const Stacked = LazyComponent(() => import("./pages/Chart/Stacked"));
+
 import "./App.css";
 
 import { useStateContext } from "./contexts/ContextProvider";
@@ -64,7 +82,7 @@ const App = () => {
             <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
               <Navbar />
             </div>
-            <div>
+            <div className="mx-10 my-5">
               {themeSettings && <ThemeSettings />}
               <Routes>
                 {/* dashboard  */}
@@ -72,25 +90,25 @@ const App = () => {
                 <Route path="/ecommerce" element={<Ecommerce />} />
 
                 {/* pages  */}
-                <Route path="/orders" element={<InProgress />} />
-                <Route path="/employees" element={<InProgress />} />
-                <Route path="/customers" element={<InProgress />} />
+                <Route path="/orders" element={<Orders />} />
+                <Route path="/employees" element={<Employee />} />
+                <Route path="/customers" element={<Customer />} />
 
                 {/* apps  */}
-                <Route path="/kanban" element={<InProgress />} />
-                <Route path="/editor" element={<InProgress />} />
-                <Route path="/calendar" element={<InProgress />} />
-                <Route path="/color-picker" element={<InProgress />} />
+                <Route path="/kanban" element={<Kanban />} />
+                <Route path="/editor" element={<Editor />} />
+                <Route path="/calendar" element={<Calendar />} />
+                <Route path="/color-picker" element={<ColorPicker />} />
 
                 {/* charts  */}
-                <Route path="/line" element={<InProgress />} />
-                <Route path="/area" element={<InProgress />} />
-                <Route path="/bar" element={<InProgress />} />
-                <Route path="/pie" element={<InProgress />} />
-                <Route path="/financial" element={<InProgress />} />
-                <Route path="/color-mapping" element={<InProgress />} />
-                <Route path="/pyramid" element={<InProgress />} />
-                <Route path="/stacked" element={<InProgress />} />
+                <Route path="/line" element={<Line />} />
+                <Route path="/area" element={<Area />} />
+                <Route path="/bar" element={<Bar />} />
+                <Route path="/pie" element={<Pie />} />
+                <Route path="/financial" element={<Financial />} />
+                <Route path="/color-mapping" element={<ColorMapping />} />
+                <Route path="/pyramid" element={<Pyramid />} />
+                <Route path="/stacked" element={<Stacked />} />
               </Routes>
             </div>
           </div>
