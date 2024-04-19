@@ -49,7 +49,3 @@ To get a local copy up and running follow these simple steps:
 ## Credits
 
 This project utilizes various open-source libraries and frameworks, including React and Tremor. We express our gratitude to the developers and contributors of these projects for their valuable contributions.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
