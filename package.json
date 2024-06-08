@@ -14,7 +14,7 @@
     "react-router-dom": "^6.2.1"
   },
   "scripts": {
-    "start": "vite",
+    "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "test": "vitest",
